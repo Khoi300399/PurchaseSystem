@@ -46,5 +46,10 @@ namespace PurchaseSystem
         {
 
         }
+
+        private void accordionControlElement3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
