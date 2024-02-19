@@ -13,7 +13,7 @@ namespace PurchaseSystem
 {
     public partial class frmMain : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
-        private ucStorekeeper ucStorekeeper;
+        private ucPurchaseOrder ucMain;
         public frmMain()
         {
             InitializeComponent();
@@ -21,17 +21,19 @@ namespace PurchaseSystem
         }
         private void load()
         {
-            if (ucStorekeeper == null)
+            if (ucMain == null)
             {
-                ucStorekeeper = new ucStorekeeper();
-                ucStorekeeper.Dock = DockStyle.Fill;
-                ucStorekeeper.BringToFront();
+                ucMain = new ucPurchaseOrder();
+                ucMain.Dock = DockStyle.Fill;
+                ucMain.BringToFront();
 
-                mainContainer.Controls.Add(ucStorekeeper);
+                mainContainer.Controls.Add(ucMain);
+
+                stTitle.Caption = acePurchase.Text;
 
             }
             else
-                ucStorekeeper.BringToFront();
+                ucMain.BringToFront();
         }
         private void accordionControlElement1_Click(object sender, EventArgs e)
         {
@@ -48,6 +50,11 @@ namespace PurchaseSystem
         }
 
         private void accordionControlElement3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barStaticItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
 
         }
